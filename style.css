@@ -20,7 +20,7 @@ main {
 .flight-list {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
   width: 80%;
   margin: 0 auto;
 }
