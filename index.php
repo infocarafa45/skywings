@@ -28,7 +28,7 @@ include 'db.php';
 
     <main>
         <section id="flights">
-            <h2>Vuelos Disponibles</h2>
+            <h2 align="center">Vuelos Disponibles</h2>
 
             <?php if (isset($_SESSION["user_id"])): ?>
             <div class="flight-list">
