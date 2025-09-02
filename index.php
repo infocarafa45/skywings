@@ -14,13 +14,13 @@ include 'db.php';
 
 <body>
     <header>
-        <h1>🌍 SkyWings Travel</h1>
+        <h1>SkyWings Travel</h1>
         <p>Encuentra las mejores tarifas para viajar!</p>
     </header>
 
     <nav>
         <?php if (isset($_SESSION["user_id"])): ?>
-        <p>Welcome, <?php echo $_SESSION["user_name"]; ?> | <a href="logout.php">Logout</a></p>
+        <p>Hola, <?php echo $_SESSION["user_name"]; ?> | <a href="logout.php">Logout</a></p>
         <?php else: ?>
         <p><a href="login.php">Login</a> | <a href="register.php">Register</a></p>
         <?php endif; ?>
