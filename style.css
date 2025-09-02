@@ -7,9 +7,12 @@ body {
 }
 
 header {
-  background-image:url(https://s.w-x.co/porqueelcieloesazul_es.jpg);
+  background-image: url(imagenes/CieloFondo.png);
+    background-repeat: no-repeat; 
+  background-size: cover;     
+  background-position: center;  
   color: white;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
 }
 

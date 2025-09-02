@@ -5,7 +5,7 @@ include 'db.php';
 
 <!DOCTYPE html>
 <html lang="es">
-
+ <link rel="shortcut icon" href="imagenes/favicon.png" type="image/x-icon">
 <head>
     <meta charset="UTF-8">
     <title>SkyWings Travel</title>
