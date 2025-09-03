@@ -24,3 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="password" name="password" placeholder="Escribe una constraseña" required><br><br>
     <button type="submit">Registrarse</button>
 </form>
+    <style>
+        * {background-color: antiquewhite;}
+    </style>

@@ -21,9 +21,9 @@ include 'db.php';
 
     <nav>
         <?php if (isset($_SESSION["user_id"])): ?>
-        <p>Hola, <?php echo $_SESSION["user_name"]; ?> | <a href="logout.php">Logout</a></p>
+        <p>Hola, <?php echo $_SESSION["user_name"]; ?> | <a href="logout.php">Cerrar Sesión</a></p>
         <?php else: ?>
-        <p><a href="login.php">Login</a> | <a href="register.php">Register</a></p>
+        <p><a href="login.php">Iniciar Sesión</a> | <a href="register.php">Registrarse</a></p>
         <?php endif; ?>
     </nav>
 
@@ -51,14 +51,14 @@ include 'db.php';
                             echo "</div>";
                         }
                     } else {
-                        echo "<p>No flights available right now.</p>";
+                        echo "<p>No hay vuelos disponibles actualmente.</p>";
                     }
 
                     $conn->close();
                     ?>
             </div>
             <?php else: ?>
-            <p>You must <a href="login.php">log in</a> or <a href="register.php">register</a> to see available flights.
+            <p>Debes <a href="login.php">Iniciar sesión</a> o <a href="register.php">Registrarte</a> para ver los vuelos disponibles.
             </p>
             <?php endif; ?>
         </section>
@@ -66,7 +66,7 @@ include 'db.php';
 
     <script>
     function reserveFlight(origin, destination, date) {
-        alert("You selected a flight from " + origin + " to " + destination + " on " + date);
+        alert("Has seleccionado un vuelo desde " + origin + " hacia " + destination + " en " + date);
         // Aquí podrías hacer una redirección o enviar datos para reservar
     }
     </script>

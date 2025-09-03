@@ -32,14 +32,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <!DOCTYPE html>
-<html>
-
+<html lang="es">
 <head>
-    <title>Login - SkyWings</title>
+    <style>
+    head {background-color: blue;}
+</style>
+    <title>Iniciar Sesión - SkyWings</title>
 </head>
 
 <body>
-    <h2>Login</h2>
+    <style>
+        body {background-color: antiquewhite;}
+    </style>
+    <h2>Iniciar Sesión</h2>
 
     <?php if ($error): ?>
     <p style="color: red;"><?php echo $error; ?></p>
@@ -48,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form method="post">
         <input type="email" name="email" placeholder="Email" required><br><br>
         <input type="password" name="password" placeholder="Contraseña" required><br><br>
-        <button type="submit">Login</button>
+        <button type="submit">Iniciar Sesión</button>
     </form>
 </body>
 
