@@ -70,5 +70,7 @@ include 'db.php';
     }
     </script>
 </body>
-
+<footer align="center">
+    <p>Hecho por:<strong><a href="https://www.instagram.com/adri.planetas?igsh=MW1paXkyMXNkZnc1NA==">Adrián</a>, y Rafael</strong> </p>
+</footer>
 </html>
