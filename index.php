@@ -5,7 +5,8 @@ include 'db.php';
 
 <!DOCTYPE html>
 <html lang="es">
- <link rel="shortcut icon" href="imagenes/favicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="imagenes/favicon.png" type="image/x-icon">
+
 <head>
     <meta charset="UTF-8">
     <title>SkyWings Travel</title>
@@ -28,9 +29,9 @@ include 'db.php';
 
     <main>
         <section id="flights">
-            <h2 align="center">Vuelos Disponibles</h2>
 
             <?php if (isset($_SESSION["user_id"])): ?>
+            <h2 align="center">Vuelos Disponibles</h2>
             <div class="flight-list">
                 <?php
                     $sql = "SELECT origin, destination, date, price, image_url FROM flights ORDER BY date ASC";
@@ -71,6 +72,8 @@ include 'db.php';
     </script>
 </body>
 <footer align="center">
-    <p>Hecho por:<strong><a href="https://www.instagram.com/adri.planetas?igsh=MW1paXkyMXNkZnc1NA==">Adrián</a>, y Rafael</strong> </p>
+    <p>Hecho por:<strong><a href="https://www.instagram.com/adri.planetas?igsh=MW1paXkyMXNkZnc1NA==">Adrián</a>, y
+            Rafael</strong> </p>
 </footer>
+
 </html>
