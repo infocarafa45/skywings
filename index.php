@@ -15,19 +15,24 @@ include 'db.php';
 
 <body>
     <!-- Encabezado -->
-    <header>
-        <h1>🌍 SkyWings Travel</h1>
-        <p>Encuentra las mejores tarifas para viajar!</p>
+    <header class="main-header">
+        <div class="header-content">
+            <h1>🌍 SkyWings Travel</h1>
+            <p>Encuentra las mejores tarifas para viajar!</p>
+            <!-- Barra de navegación -->
+            <nav>
+                <?php if (isset($_SESSION["user_id"])): ?>
+                <p>Hola, <?php echo $_SESSION["user_name"]; ?> | <a href="logout.php">Cerrar Sesión</a></p>
+                <?php else: ?>
+                <div class="nav-buttons">
+                    <a href="login.php" class="cta-btn">Iniciar Sesión</a>
+                    <a href="register.php" class="cta-btn">Registrarse</a>
+                </div>
+                <?php endif; ?>
+            </nav>
+        </div>
     </header>
 
-    <!-- Barra de navegación -->
-    <nav>
-        <?php if (isset($_SESSION["user_id"])): ?>
-        <p>Hola, <?php echo $_SESSION["user_name"]; ?> | <a href="logout.php">Cerrar Sesión</a></p>
-        <?php else: ?>
-        <p><a href="login.php">Iniciar Sesión</a> | <a href="register.php">Registrarse</a></p>
-        <?php endif; ?>
-    </nav>
 
     <main>
         <?php if (isset($_SESSION["user_id"])): ?>
