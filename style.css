@@ -100,8 +100,7 @@ main {
 /* --- Responsividad --- */
 @media (max-width: 768px) {
   .flight {
-    flex-direction: column; /* se apilan en vertical */
-    text-align: center;
+    flex-direction: column;
   }
 
   .flight-img {
