@@ -53,7 +53,7 @@ include 'db.php';
                             echo "<strong>Hasta:</strong> " . htmlspecialchars($flight['destination']) . "</p>";
                             echo "<p><strong>Fecha:</strong> " . htmlspecialchars($flight['date']) . "</p>";
                             echo "<p><strong>Precio:</strong> $" . htmlspecialchars($flight['price']) . "</p>";
-                            echo "<button onclick=\"reserveFlight('{$flight['origin']}', '{$flight['destination']}', '{$flight['date']}')\">Reservar Vuelo</button>";
+                            echo "<button onclick=\"reserveFlight('{$flight['origin']}', '{$flight['destination']}', '{$flight['date']}')\">Planificar Viaje</button>";
                             echo "</div>";
                             echo "</div>";
                         }
@@ -115,12 +115,7 @@ include 'db.php';
     </footer>
 
     <!-- JS -->
-    <script>
-    function reserveFlight(origin, destination, date) {
-        alert("Has seleccionado un vuelo desde " + origin + " hacia " + destination + " en " + date);
-        // Aquí podrías hacer una redirección o enviar datos para reservar
-    }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
