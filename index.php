@@ -33,7 +33,6 @@ include 'db.php';
         </div>
     </header>
 
-
     <main>
         <?php if (isset($_SESSION["user_id"])): ?>
         <!-- Vuelos disponibles -->
@@ -53,7 +52,7 @@ include 'db.php';
                             echo "<strong>Hasta:</strong> " . htmlspecialchars($flight['destination']) . "</p>";
                             echo "<p><strong>Fecha:</strong> " . htmlspecialchars($flight['date']) . "</p>";
                             echo "<p><strong>Precio:</strong> $" . htmlspecialchars($flight['price']) . "</p>";
-                            echo "<button onclick=\"reserveFlight('{$flight['origin']}', '{$flight['destination']}', '{$flight['date']}')\">Planificar Viaje</button>";
+                            echo "<button onclick=\"planFlight('{$flight['origin']}', '{$flight['destination']}', '{$flight['date']}')\">Planificar Viaje</button>";
                             echo "</div>";
                             echo "</div>";
                         }
@@ -107,6 +106,44 @@ include 'db.php';
         <?php endif; ?>
     </main>
 
+    <!-- 🔹 Modal para Planificar Viaje -->
+    <div id="tripModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Planifica tu viaje</h2>
+            <form action="save_trip.php" method="POST">
+                <input type="hidden" name="destination" id="modal-destination">
+
+                <label>Motivo del viaje:</label>
+                <select name="motivo" required>
+                    <option value="Vacaciones">Vacaciones</option>
+                    <option value="Negocios">Negocios</option>
+                    <option value="Estudios">Estudios</option>
+                    <option value="Visita Familiar">Visita Familiar</option>
+                    <option value="Salud">Salud</option>
+                    <option value="Otro">Otro</option>
+                </select>
+
+                <label>Fecha de ida:</label>
+                <input type="date" name="fecha_ida" required>
+
+                <label>Fecha de vuelta:</label>
+                <input type="date" name="fecha_vuelta" required>
+
+                <label>Número de personas:</label>
+                <input type="number" name="personas" min="1" required>
+
+                <label>Presupuesto aproximado (USD):</label>
+                <input type="number" name="presupuesto" step="0.01" required>
+
+                <label>Preguntas o comentarios:</label>
+                <textarea name="preguntas"></textarea>
+
+                <button type="submit">Enviar Solicitud</button>
+            </form>
+        </div>
+    </div>
+    <!-- 🔹 Fin del Modal -->
 
     <!-- Footer -->
     <footer align="center">
