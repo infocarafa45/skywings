@@ -36,32 +36,18 @@ include 'db.php';
     <main>
         <?php if (isset($_SESSION["user_id"])): ?>
         <!-- Vuelos disponibles -->
+
         <section id="flights">
             <h2 align="center">Vuelos Disponibles</h2>
-            <div class="flight-list">
-                <?php
-                    $sql = "SELECT origin, destination, date, price, image_url FROM flights ORDER BY date ASC";
-                    $result = $conn->query($sql);
 
-                    if ($result->num_rows > 0) {
-                        while ($flight = $result->fetch_assoc()) {
-                            echo "<div class='flight'>";
-                            echo "<img src='" . htmlspecialchars($flight['image_url']) . "' alt='Destino' class='flight-img'>";
-                            echo "<div class='flight-info'>";
-                            echo "<p><strong>Desde:</strong> " . htmlspecialchars($flight['origin']) . " &nbsp;&nbsp;";
-                            echo "<strong>Hasta:</strong> " . htmlspecialchars($flight['destination']) . "</p>";
-                            echo "<p><strong>Fecha:</strong> " . htmlspecialchars($flight['date']) . "</p>";
-                            echo "<p><strong>Precio:</strong> $" . htmlspecialchars($flight['price']) . "</p>";
-                            echo "<button onclick=\"planFlight('{$flight['origin']}', '{$flight['destination']}', '{$flight['date']}')\">Planificar Viaje</button>";
-                            echo "</div>";
-                            echo "</div>";
-                        }
-                    } else {
-                        echo "<p>No hay vuelos disponibles actualmente.</p>";
-                    }
+            <!-- 🔍 Buscador dinámico -->
+            <div style="text-align:center; margin-bottom:20px;">
+                <input type="text" id="search" placeholder="Buscar destino u origen...">
+            </div>
 
-                    $conn->close();
-                    ?>
+            <!-- Contenedor de resultados -->
+            <div class="flight-list" id="flight-results">
+                <!-- Aquí se cargarán los vuelos vía AJAX -->
             </div>
         </section>
         <?php else: ?>
