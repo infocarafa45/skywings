@@ -13,9 +13,11 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while ($flight = $result->fetch_assoc()) {
+      
         echo "<div class='flight'>";
         echo "<img src='" . htmlspecialchars($flight['image_url']) . "' alt='Destino' class='flight-img'>";
         echo "<div class='flight-info'>";
+        echo "<strong>Vuelo a: " . htmlspecialchars($flight['destination']) . "</strong>";
         echo "<p><strong>Desde:</strong> " . htmlspecialchars($flight['origin']) . " &nbsp;&nbsp;";
         echo "<strong>Hasta:</strong> " . htmlspecialchars($flight['destination']) . "</p>";
         echo "<p><strong>Fecha:</strong> " . htmlspecialchars($flight['date']) . "</p>";

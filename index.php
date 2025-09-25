@@ -38,7 +38,7 @@ include 'db.php';
         <!-- Vuelos disponibles -->
 
         <section id="flights">
-            <h2 align="center">Vuelos Disponibles</h2>
+            <h2 align="center" id="vdid">Vuelos Disponibles</h2>
 
             <!-- 🔍 Buscador dinámico -->
             <div style="text-align:center; margin-bottom:20px;">
@@ -63,17 +63,17 @@ include 'db.php';
             <h2>🌍 Destinos Populares</h2>
             <div class="destinations-grid">
                 <div class="destination">
-                    <img src="imagenes/paris.jpg" alt="Paris">
+                    <img src="imagenes/paris.jpg" alt="Paris" onclick="openDestinationModal('paris')">
                     <h3>París</h3>
                     <p>La ciudad del amor te espera con sus luces y su encanto.</p>
                 </div>
                 <div class="destination">
-                    <img src="imagenes/newyork.jpg" alt="New York">
+                    <img src="imagenes/newyork.jpg" alt="New York" class="destination-img" data-dest="New York" onclick="openDestinationModal('newyork')">
                     <h3>New York</h3>
                     <p>La ciudad que nunca duerme, llena de oportunidades y aventuras.</p>
                 </div>
                 <div class="destination">
-                    <img src="imagenes/tokyo.jpg" alt="Tokyo">
+                    <img src="imagenes/tokyo.jpg" alt="Tokyo" onclick="openDestinationModal('tokyo')">
                     <h3>Tokio</h3>
                     <p>Modernidad y tradición en una de las metrópolis más fascinantes.</p>
                 </div>
@@ -82,8 +82,8 @@ include 'db.php';
 
         <!-- Beneficios -->
         <section class="benefits">
-            <h2>¿Por qué elegirnos?</h2>
-            <ul>
+            <h2 style="height: 50px;">¿Por qué elegirnos?</h2>
+            <ul style="height: 10px;">
                 <li>✈️ Más de 100 destinos internacionales</li>
                 <li>💸 Ofertas exclusivas para miembros registrados</li>
                 <li>🕑 Atención al cliente 24/7</li>
@@ -139,6 +139,14 @@ include 'db.php';
 
     <!-- JS -->
     <script src="script.js"></script>
+    <!-- Modal de destinos -->
+<div id="destinationModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeDestinationModal()">&times;</span>
+        <h2 id="destinationTitle"></h2>
+        <p id="destinationInfo"></p>
+    </div>
+</div>
 </body>
 
 </html>
