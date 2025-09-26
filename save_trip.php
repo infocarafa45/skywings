@@ -40,13 +40,7 @@ if ($stmt->execute()) {
     $mail = new PHPMailer(true);
     try {
         // Servidor SMTP
-        $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com';
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'infocarafa45@gmail.com';
-        $mail->Password   = 'gzjo ytcz uvto hsiw';
-        $mail->SMTPSecure = 'tls';
-        $mail->Port       = 587;
+    
 
         // Destinatarios
         $mail->setFrom('no-reply@skywings.com', 'SkyWings Travel');
